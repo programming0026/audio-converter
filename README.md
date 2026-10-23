@@ -29,6 +29,8 @@ flowchart LR
 4. Al terminar emite `complete` con `{ filename, downloadToken }`.
 5. El frontend descarga el archivo con `GET /api/audio/download/{token}` (token de un solo uso) y lo guarda automáticamente.
 
+Los diagramas UML y de arquitectura del backend están en [`sw-reactive-audio-converter/docs/DIAGRAMS.md`](sw-reactive-audio-converter/docs/DIAGRAMS.md).
+
 También existe `POST /api/audio/convert`, que devuelve el archivo convertido directamente sin streaming de progreso (útil con `curl`).
 
 ## Inicio rápido con Docker
