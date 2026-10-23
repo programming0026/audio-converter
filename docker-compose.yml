@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./sw-reactive-audio-converter
+      dockerfile: Dockerfile
+    container_name: audio-converter-backend
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./react-audio-converter
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: http://sw-audio-backend:8080
+    container_name: audio-converter-frontend
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,11 @@
+target
+.idea
+.vscode
+.git
+.gitattributes
+.gitignore
+*.iml
+HELP.md
+README.md
+nbactions.xml
+fronted
